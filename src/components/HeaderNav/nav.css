@@ -1,0 +1,10 @@
+.navlink{
+    line-height: 40px;
+}
+.navlink:focus{
+    font-size: 20px;
+    color: deepskyblue;
+}
+.navlink{
+    color: white;
+}
