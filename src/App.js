@@ -12,39 +12,44 @@ import MoreData from './components/service/MoreData';
 import Login from './components/login/Login';
 import Signup from './components/signup/Signup';
 import Error404 from './components/error404/Error404';
+import AuthProvider from './contexts/AuthProvider';
+import PrivateRoute from './components/privateRoute/PrivateRoute';
 
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
+   <AuthProvider>
+     <BrowserRouter>
       <HeaderNav></HeaderNav>
       <Switch>
-        <Route path="/home">
+        <Route exact path="/home">
+          <Home></Home>
+        </Route>
+        <Route exact path="/">
           <Home></Home>
         </Route>
         <Route path="/doctors">
           <Service></Service>
         </Route>
-        <Route path="/about">
+        <PrivateRoute path="/about">
           <About></About>
-        </Route>
-        <Route path="/moredata/:dynamicId">
+        </PrivateRoute>
+        <PrivateRoute path="/moredata/:dynamicId">
           <MoreData></MoreData>
-        </Route>
+        </PrivateRoute>
+        <PrivateRoute path="/homeservice/:dynamicId">
+          <HomeService></HomeService>
+          </PrivateRoute>.
         <Route path="/login">
           <Login></Login>
         </Route>
         <Route path="/signup">
           <Signup></Signup>
         </Route>
-       
         <Route path="*">
           <Error404></Error404>
         </Route>
-        <Route path="/">
-          <Home></Home>
-        </Route>
+        
         
       </Switch>
       <Route>
@@ -52,7 +57,7 @@ function App() {
         </Route>
       
       </BrowserRouter>
-    </div>
+   </AuthProvider>
     
   );
 }

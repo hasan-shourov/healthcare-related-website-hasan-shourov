@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 import logo from '../../image/logo.png'
 import './nav.css';
 import Banner from '../banner/Banner';
+import useAuth from '../../hook/useAuth';
 const HeaderNav = () => {
 
+    const {users, signoout} = useAuth({})
    
     return (
         <div>
@@ -63,13 +65,13 @@ const HeaderNav = () => {
                     </NavDropdown> */}
                     </Nav>
                     <Nav>
-                    <Nav.Link >
+                    {!users.email ? <> <Nav.Link >
                         <Link to="login" className="border-end pe-3 text-decoration-none navlink ">LogIn</Link>
                     </Nav.Link>
                 
                     <Nav.Link >
                         <Link to="signup" className=" pe-3 text-decoration-none navlink ">SignUp</Link>
-                    </Nav.Link>
+                    </Nav.Link> </> : <button onClick={signoout} className="btn btn-outline text-white border ">LogOut</button> }
                     </Nav>
                 </Navbar.Collapse>
                 </Container>

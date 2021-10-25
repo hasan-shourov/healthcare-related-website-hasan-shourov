@@ -17,7 +17,7 @@ const Home = () => {
                 
                 <p className="text-center fs-5 text-secondary"> MediCal is an online medical service targeting emerging markets that are rapidly digitising. <br /> Our mission is to improve the health and wellbeing of the populations we serve. <br /> We have developed accessible and affordable telehealth services that aims to support the public health system, <br /> research and clinical trials. <br /> <br />
                 <Link to="about">
-                <button className="btn btn-outline-primary rounded-pill ">See more</button>
+                <button className="btn btn-outline-primary rounded-pill mb-2">See more</button>
                 </Link>
                  </p>
                 

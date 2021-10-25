@@ -1,18 +1,43 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import useAuth from '../../hook/useAuth';
+import {useLocation, useHistory } from "react-router"
 
 
 const Login = () => {
-    
+    const {signinn,emaail,setUsers, passworrrd,googleSignUp } =useAuth({})
+
+    const location = useLocation()
+    const history = useHistory()
+    console.log("come from", location.state?.from);
+// it is for after log in we shift login to home page or expected page
+    const signUpGoogle = () =>{
+        googleSignUp()
+        .then(result =>{
+            console.log(result.user);
+            setUsers(result.user)
+            history.push(location.state?.from || "/home")
+        })
+        .catch((error)=>{
+            console.log(error.message);
+        })   
+    }
     return (
         <div style={{height:"50vh"}} className="text-center">
-            <form className="text-center py-5">
-                <input type="email" name="" placeholder="Your email" id="" />
+            <form onSubmit={signinn} className="text-center py-5">
+
+                <input onBlur={emaail} type="email" name="" placeholder="Your email" id="" />
                 <br /><br />
-                <input type="password" name="" placeholder="Your password" id="" />
+
+                <input onBlur={passworrrd} type="password" name="" placeholder="Your password" id="" />
                 <br /><br /><br />
-                <button type="submit" className="btn btn-outline-danger">Log In</button>
+
+                <input type="submit" value="Log In" className="btn btn-outline-danger" />
+ 
             </form>
-            <button  className="btn btn-light" ><i className="fab fa-google bg-primary text-white p-2 rounded-circle"></i> use google</button>
+            <button onClick={signUpGoogle}  className="btn btn-light" ><i className="fab fa-google bg-primary text-white p-2 rounded-circle"></i> use google</button>
+            <p></p>
+            <Link to="signup">Don't have any account</Link>
         </div>
     );
 };
