@@ -2,7 +2,7 @@ import React from 'react';
 
 const OurTeam = () => {
     return (
-        <div style={{height:"50vh"}} className="container mt-3">
+        <div  className="container mt-3">
             <div className=" row">
                 
                 <div className="col-md-4 col-m-12">
