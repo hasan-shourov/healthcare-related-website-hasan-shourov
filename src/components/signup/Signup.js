@@ -5,7 +5,7 @@ import useFirebase from '../../hook/usefirebase';
 import {useLocation, useHistory } from "react-router"
 
 const Signup = () => {
-    const {googleSignUp,setError, error,setUsers, users, submitForm,
+    const {googleSignUp, setIsLoading ,setError, error,setUsers, users, submitForm,
         setnaame,
         emaail,
         passworrrd} = useAuth({})
@@ -26,7 +26,8 @@ const Signup = () => {
             })
             .catch((error)=>{
                 console.log(error.message);
-            })   
+            }) 
+            .finally(()=> setIsLoading(false))  
         }
         
     return (

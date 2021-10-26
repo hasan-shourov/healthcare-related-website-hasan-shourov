@@ -14,6 +14,7 @@ const useFirebase = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState()
+    const [isLoading, setIsLoading] = useState(true)
 
 
     const auth = getAuth();
@@ -21,6 +22,7 @@ const useFirebase = () => {
     //google sign up -------------------------------
     //----------------------------------------------
     const googleSignUp = () =>{
+        setIsLoading(true)
         const googleProvider = new GoogleAuthProvider();
       return  signInWithPopup(auth, googleProvider)
         
@@ -30,6 +32,7 @@ const useFirebase = () => {
      //---------------------------------
     //sign Out --------------------------
     const signoout = () => {
+        setIsLoading(true)
         signOut(auth)
         .then(()=>{
             //sign out
@@ -37,6 +40,8 @@ const useFirebase = () => {
         .catch((error)=>{
             console.log(error);
         })
+        .finally(()=> setIsLoading(false))  
+
     };
     //------------------------------------
     //get the currently sign in user
@@ -49,6 +54,7 @@ const useFirebase = () => {
                 setUsers({})
             }
         })
+        setIsLoading(false)
         return () => unsubscribe;
     },[])
 
@@ -80,6 +86,7 @@ const useFirebase = () => {
         return setError("include At least one special character")
     }
 
+    setIsLoading(true)
     // console.log(email, password, name);
         createUserWithEmailAndPassword(auth, email, password, name)
       
@@ -94,12 +101,15 @@ const useFirebase = () => {
             console.log(error.message);
             setError('')
         })
+        .finally(()=> setIsLoading(false))  
+
         
     };
 
     //signin user 
     const signinn = e =>{
         e.preventDefault()
+        setIsLoading(true)
       signInWithEmailAndPassword(auth, email, password)
         .then((result)=>{
             console.log(result.user);
@@ -110,6 +120,8 @@ const useFirebase = () => {
             console.log(error.message);
             
         })
+        .finally(()=> setIsLoading(false))  
+
     };
 
     //Send a user a verification email
@@ -132,7 +144,9 @@ const useFirebase = () => {
 
         signinn,
         setUsers,
-        setError
+        setError,
+        setIsLoading,
+        isLoading
     }
 };
 

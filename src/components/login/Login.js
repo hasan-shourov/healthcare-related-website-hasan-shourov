@@ -5,7 +5,7 @@ import {useLocation, useHistory } from "react-router"
 
 
 const Login = () => {
-    const {signinn,emaail,setUsers, passworrrd,googleSignUp, users } =useAuth({})
+    const {signinn, setIsLoading, emaail,setUsers, passworrrd,googleSignUp, users } =useAuth({})
 
     const location = useLocation()
     const history = useHistory()
@@ -25,7 +25,9 @@ const Login = () => {
         })
         .catch((error)=>{
             console.log(error.message);
-        })   
+        })  
+        .finally(()=> setIsLoading(false))  
+ 
     }
     return (
         <div style={{height:"50vh"}} className="text-center">
