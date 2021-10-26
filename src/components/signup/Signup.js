@@ -27,7 +27,7 @@ const Signup = () => {
             .catch((error)=>{
                 console.log(error.message);
             }) 
-            .finally(()=> setIsLoading(false))  
+            // .finally(()=> setIsLoading(false))  
         }
         
     return (

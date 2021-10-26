@@ -50,10 +50,10 @@ const HeaderNav = () => {
                 <Navbar.Toggle  aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse  id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                    <Link to="home"  className="text-decoration-none navlink me-md-4"> Home </Link>
-                    <Link to="doctors"  className="text-decoration-none navlink me-md-4"> Doctors </Link>
-                    <Link to="about"  className="text-decoration-none navlink me-md-4"> About </Link>
-                    <Link to="team"  className="text-decoration-none navlink me-md-4"> Our Team </Link>
+                    <Link to="/home"  className="text-decoration-none navlink me-md-4"> Home </Link>
+                    <Link to="/doctors"  className="text-decoration-none navlink me-md-4"> Doctors </Link>
+                    <Link to="/about"  className="text-decoration-none navlink me-md-4"> About </Link>
+                    <Link to="/team"  className="text-decoration-none navlink me-md-4"> Our Team </Link>
                    
                     
                     {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">

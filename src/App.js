@@ -38,7 +38,7 @@ function App() {
         <Route path="/about">
           <About></About>
         </Route>
-        <PrivateRoute path="/moredata/:dynamicId">
+        <PrivateRoute exact path="/moredata/:dynamicId">
           <MoreData></MoreData>
         </PrivateRoute>
         <PrivateRoute path="/homeservice/:dynamicId">
