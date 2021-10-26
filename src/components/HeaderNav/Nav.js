@@ -53,7 +53,7 @@ const HeaderNav = () => {
                     <Link to="home"  className="text-decoration-none navlink me-md-4"> Home </Link>
                     <Link to="doctors"  className="text-decoration-none navlink me-md-4"> Doctors </Link>
                     <Link to="about"  className="text-decoration-none navlink me-md-4"> About </Link>
-                    <Link to="home"  className="text-decoration-none navlink me-md-4"> Private Route </Link>
+                    <Link to="team"  className="text-decoration-none navlink me-md-4"> Our Team </Link>
                    
                     
                     {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">

@@ -14,6 +14,7 @@ import Signup from './components/signup/Signup';
 import Error404 from './components/error404/Error404';
 import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './components/privateRoute/PrivateRoute';
+import OurTeam from './components/OurTeam/OurTeam';
 
 
 function App() {
@@ -31,9 +32,12 @@ function App() {
         <Route path="/doctors">
           <Service></Service>
         </Route>
-        <PrivateRoute path="/about">
+        <Route path="/team">
+          <OurTeam></OurTeam>
+        </Route>
+        <Route path="/about">
           <About></About>
-        </PrivateRoute>
+        </Route>
         <PrivateRoute path="/moredata/:dynamicId">
           <MoreData></MoreData>
         </PrivateRoute>
