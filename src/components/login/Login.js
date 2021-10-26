@@ -5,11 +5,16 @@ import {useLocation, useHistory } from "react-router"
 
 
 const Login = () => {
-    const {signinn,emaail,setUsers, passworrrd,googleSignUp } =useAuth({})
+    const {signinn,emaail,setUsers, passworrrd,googleSignUp, users } =useAuth({})
 
     const location = useLocation()
     const history = useHistory()
     console.log("come from", location.state?.from);
+
+    //after login condition throw the login page to home page
+    if(users.email){
+        history.push(location.state?.from || "/home")
+    }
 // it is for after log in we shift login to home page or expected page
     const signUpGoogle = () =>{
         googleSignUp()
@@ -40,6 +45,6 @@ const Login = () => {
             <Link to="signup">Don't have any account</Link>
         </div>
     );
-};
+}
 
-export default Login;
+export default Login

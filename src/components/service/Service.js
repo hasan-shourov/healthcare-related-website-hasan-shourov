@@ -7,7 +7,7 @@ import Flip  from 'react-reveal/Zoom';
 const Service = () => {
     const [cards, setCard] = useState([])
     useEffect(()=>{
-        fetch("./data.JSON")
+        fetch("./data.json")
         .then(res => res.json())
         .then(data => setCard(data))
     },[])

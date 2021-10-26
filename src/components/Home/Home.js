@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Banner from '../banner/Banner';
 import HomeService from '../HomeService.js/HomeService';
+import HomeBonus from './HomeBonus';
+import HomeBouns2 from './HomeBouns2';
 
 const Home = () => {
     const about ={
@@ -25,6 +27,8 @@ const Home = () => {
             </div>
             </div>
             <HomeService ></HomeService>
+            <HomeBouns2></HomeBouns2>
+            <HomeBonus></HomeBonus>
         </div>
     );
 };

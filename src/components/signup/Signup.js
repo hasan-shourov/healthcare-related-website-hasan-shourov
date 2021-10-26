@@ -11,7 +11,6 @@ const Signup = () => {
         passworrrd} = useAuth({})
         const location = useLocation()
         const history = useHistory()
-        
        //after login condition throw the login page to home page
        if(users.email){
         history.push(location.state?.from || "/home")

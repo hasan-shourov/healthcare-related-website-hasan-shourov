@@ -5,7 +5,7 @@ const MoreData = () => {
     const {dynamicId} = useParams();
     const [use, setUse] = useState({})
     useEffect(()=>{
-        fetch("/data.JSON")
+        fetch("/data.json")
         .then(res=>res.json())
         .then(data => {
             const more = data.find(d=>d.id == dynamicId)
