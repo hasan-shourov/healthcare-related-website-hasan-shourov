@@ -16,9 +16,9 @@ const MoreData = () => {
     const {name, photo,degree, special, experiance, summery ,license } =use;
     
     return (
-        <div style={{height:"90vh"}}>
+        <div style={{height:"110vh"}}>
             <div className="d-flex flex-wrap p-5">
-                <div className="pe-5 ">
+                <div className=" ">
                     <img src={photo} alt="" style={{width:"300px"}} />
                 </div>
                 <div>
@@ -32,6 +32,9 @@ const MoreData = () => {
                     <hr />
                     <small>License({license})</small>
                 </div>
+                
+                <button className='btn btn-info mt-5'>Get Appoinment</button>
+                <p className="mt-5 ms-3">or- <strong > call : +1204502</strong></p>
             </div>
         </div>
     );

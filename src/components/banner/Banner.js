@@ -15,8 +15,8 @@ const Banner = () => {
                 <div className="row">
             <div className="col-8 ">
                 <div className="description">
-                    <h1 className="mt-md-5 mt-sm-3 " >this is our heading section</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias porro deleniti quaerat cupiditate, aliquid officiis atque ea sunt perspiciatis doloremque.</p>
+                    <h1 className="mt-md-5 mt-sm-3 " >A telemedicine service Platform</h1>
+                    <p>Telemedicine allows health care professionals to evaluate, diagnose and treat patients at a distance using telecommunications technology. The approach has been through a striking evolution in the last decade and it is becoming an increasingly important part of the American healthcare infrastructure.</p>
                     
                 </div>
                 <div className="btnn">
